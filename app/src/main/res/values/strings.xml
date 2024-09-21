@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FinanceApp</string>
+    <string name="deposite">Deposite</string>
+    <string name="chart">Chart</string>
+    <string name="profile">Profile</string>
+    <string name="bookmark">Bookmark</string>
+</resources>
