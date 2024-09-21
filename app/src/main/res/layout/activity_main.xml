@@ -122,6 +122,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <eightbitlab.com.blurview.BlurView
+                    android:id="@+id/blueView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

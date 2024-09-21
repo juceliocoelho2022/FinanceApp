@@ -1,13 +1,18 @@
 package com.juceliodev.financeapp.Activity
 
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.juceliodev.financeapp.Adapter.ExpenseListAdapter
+import com.juceliodev.financeapp.R
 import com.juceliodev.financeapp.ViewModel.MainViewModel
 import com.juceliodev.financeapp.databinding.ActivityMainBinding
+import eightbitlab.com.blurview.RenderScriptBlur
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -23,11 +28,29 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
         initRecyclerview()
+        setBlueEffect()
+    }
+
+    private fun setBlueEffect() {
+        val radius = 10f
+        val decorView = this.window.decorView
+        val rootView = decorView.findViewById<View>(android.R.id.content) as ViewGroup
+        val windowBackground = decorView.background
+        binding.blueView.setupWith(
+            rootView,
+            RenderScriptBlur(this)
+        )
+            .setFrameClearDrawable(windowBackground)
+            .setBlurRadius(radius)
+
+        binding.blueView.setOutlineProvider(ViewOutlineProvider.BACKGROUND)
+        binding.blueView.setClipToOutline(true)
+
     }
 
     private fun initRecyclerview() {
-       binding.view1.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        binding.view1.adapter=ExpenseListAdapter(mainViewModel.loadData())
-        binding.view1.isNestedScrollingEnabled= false
+        binding.view1.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.view1.adapter = ExpenseListAdapter(mainViewModel.loadData())
+        binding.view1.isNestedScrollingEnabled = false
     }
 }
