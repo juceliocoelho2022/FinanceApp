@@ -4,4 +4,6 @@
     <string name="chart">Chart</string>
     <string name="profile">Profile</string>
     <string name="bookmark">Bookmark</string>
+    <string name="_16">+16%</string>
+    <string name="edit">Edit</string>
 </resources>

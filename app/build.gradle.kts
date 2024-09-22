@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.mikhaellopez:circularprogressbar:3.1.0")
+    implementation(libs.circularprogressbar)
     implementation("com.github.Dimezis:BlurView:version-2.0.3")
 
     //lifecycle

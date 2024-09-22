@@ -1,5 +1,6 @@
 package com.juceliodev.financeapp.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,18 @@ class MainActivity : AppCompatActivity() {
         )
         initRecyclerview()
         setBlueEffect()
+        setVariable()
+    }
+
+    private fun setVariable() {
+        binding.cardBtn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    ReportActivity::class.java
+                )
+            )
+        }
     }
 
     private fun setBlueEffect() {
